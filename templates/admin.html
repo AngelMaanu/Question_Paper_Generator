@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background-image: url("static/new4.jpg");
+            background-size: cover;
+        }
+
+        h1 {
+            text-align: center;
+            color: #0d0d0d;
+        }
+
+        table {
+            margin-top: 20px;
+            border-collapse: collapse;
+            width: 80%;
+            color:#1b1a1a
+        }
+
+        th, td {
+            border: 1px solid #f0ecec;
+            padding: 8px;
+            text-align: left;
+            background-color: white;
+        }
+
+        th {
+            background-color: #060606;
+            color: rgb(251, 245, 245);
+        }
+
+        tr:hover {
+            background-color: #f2eaea;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 20px;
+            text-decoration: none;
+            color: rgb(1, 1, 1);
+        }
+    </style>
+</head>
+<body>
+
+    <a href="javascript:history.back()" class="back-button">
+        <i class="fas fa-arrow-left"></i> Back
+    </a>
+
+    <h1>Admin Page</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>   
+                <th>Email Id</th>
+                <th>Total Mark</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+                <tr>
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</td>
+               </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>
